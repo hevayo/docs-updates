@@ -1,0 +1,8 @@
+# Updates: 2.0.0.
+# Written by tools/rebuild/edition-folders.mjs (Edition layout: folders).
+schemaVersion: 1
+docSpace: updates
+id: 2.0.0
+name: Updates 2.0.0
+variables:
+  productName: WSO2 Updates

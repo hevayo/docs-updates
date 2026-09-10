@@ -1,118 +1,22 @@
-# WSO2 Updates Documentation
----
-This is the documentation for the approaching release of WSO2 Updates 2.0.0. Please note that this documentation is work in progress.
+# docs-updates
 
-To see the **latest released documentation** for the WSO2 Updates, go to: [https://updates.docs.wso2.com/en/latest/](https://updates.docs.wso2.com/en/latest/)
+The WSO2 Updates documentation. Two sites live in this repo until the cutover:
 
-## Run the project locally
+- `master` builds the current site, https://updates.docs.wso2.com/en/latest/ (MkDocs, `en/`). Writers still change the docs there.
+- `docs-v2/main` is the same docs as a Content repo of WSO2 Docs (docs.wso2.com), generated from `master` until the cutover. At the cutover it becomes the repo's main line.
 
-### Step 1 - Install Python
+## The WSO2 Docs layout (`docs-v2/main`)
 
-If you are using MacOS, you probably already have a version of Python installed on your machine. You can verify this by running the following command.
+| Directory | Doc space | Editions and branches |
+|---|---|---|
+| `updates/` | Updates | 2.0.0, built from `docs-v2/main` |
 
-```shell
-$ python --version
-Python 2.7.2
-```
+Each Doc space directory holds `docspace.yaml` (the Doc space manifest), `editions.yaml` (per-Edition variables), `redirects.yaml` (page moves), `docs/` (pages; folders are the menu) and `assets/` (images and downloads).
 
-If your version of Python is Python 2.x.x, you also need to install Python3. This is because the PDF plugin only supports Python3. Follow the instructions in [this guide](https://docs.python-guide.org/starting/install3/osx/) to install Python3 properly.
+Every branch of this layout starts with `docs-v2/` until the cutover. Updates has one version, 2.0.0, built from the main line; there are no release branches. Docs releases are made by hand from `docs-v2/main` and tagged `2.0.0-docs.<n>`.
 
-After completing the above, you will have two versions of Python on your machine; a version of python2 and a version of python3.
+The repo root holds only shared files: this README, `CODEOWNERS`, `LICENSE`, the issue and pull request templates, the release workflow (`.github/workflows/docs-bundle-release.yml`, "Release a Docs bundle"), the branch ruleset (`.github/branch-ruleset.json`), the editor settings, and `AGENTS.md` and `CLAUDE.md` for agents (they point to `npx @wso2-enterprise/docs help`), the Platform-managed ones from `templates/content-repo/` in `wso2-enterprise/choreolabs-docs`.
 
-### Step 2 - Install Pip
->
-> **INFO**
->
-> If pip is not already installed on your machine, download `get-pip.py` to install pip for the first time. Then run the following command to install it:
-> ```shell
-> $ python get-pip.py
-> ```
->
+The tools are on GitHub Packages. Once per machine, make a classic personal access token with `read:packages` (authorised for the `wso2-enterprise` organisation's SSO if it asks), then run `npm login --scope=@wso2-enterprise --auth-type=legacy --registry=https://npm.pkg.github.com` with your GitHub user name and the token as the password. This repo's `.npmrc` names the registry for `@wso2-enterprise`; it holds no token.
 
-Pip is most likely installed by default. However, you may need to upgrade pip to the latest version:
-
-```shell
-$ pip install --upgrade pip
-```
-
-### Step 3 - Install the pip packages
-
-1. Navigate to the `<language-folder>/` folder.
-
-    ```shell
-    $ cd docs-updates/en
-    ```
-
-2. Install the required pip packages.
-
-    This will install MkDocs and the required theme, extensions, and plugins.
-
-    - If you are using Python2, use the following command:
-
-      ```shell
-      $ pip install -r requirements.txt
-      ```
-
-    - If you are using Python3, use the following command:
-
-      ```shell
-      $ pip3 install -r requirements.txt
-      ```
-
-### Step 4 - Run MkDocs
-
-Follow the steps below to clone the Updates documentation GitHub repository and to run the site on your local server.
-
-1. Fork the GitHub repository: `https://github.com/wso2/docs-updates.git`
-2. Navigate to the place where you want to clone the repo.
-
-    Git clone the forked repository.
-
-    ```shell
-    $ git clone https://github.com/[git-username]/docs-updates.git
-    ```
-
-3. Navigate to the folder containing the repo that you cloned in step 4.1 on a terminal window.
-
-    For example:
-
-    ```shell
-    $ cd docs-updates/<Language-folder>/
-    ```
-
-    ```shell
-    $ cd docs-updates/en/
-    ```
-
-4. Run the following command to start the server and view the site on your local server.
-
-    ```shell
-    $ mkdocs serve
-    ```
-
-    > **NOTE:**
-    >
-    > If you are making changes and want to see them on the fly, run the following command to start the server and view the site on your local server.
-    > 1. Navigate to the `mkdocs.yml` file.
-    > 2. Change the following configuration to `false` as shown below. 
-    >     ```
-    >     #Breaks build if there's a warning
-    >     strict: false
-    >     ```
-    > 3. Run the following command to start the server and to make the server load only the changed items and display the changes faster. 
-    >
-    >    `mkdocs serve --dirtyreload`
-  
-5. Open the following URL on a new browser window to view the WSO2 Updates documentation site locally.
-
-    [http://localhost:8000/getting-started/overview/](http://localhost:8000/getting-started/overview/)
-
-> **NOTE:**
->
-> If you were running the `mkdocs serve --dirtyreload` command to run the MkDocs server, make sure to change the configuration in the `mkdocs.yml` file as follows before sending a pull request.
->
-> `strict: true` 
-
-## License
-
-Licenses this source under the Apache License, Version 2.0 ([LICENSE](LICENSE)), You may not use this file except in compliance with the License.
+Get started, from setting up your computer to a Docs release going live: the WSO2 Docs Platform's README, https://github.com/wso2-enterprise/choreolabs-docs#readme.
