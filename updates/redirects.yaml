@@ -1,0 +1,4 @@
+# Page moves (from → to, both page paths). Old updates.docs.wso2.com addresses are
+# mapped outside the repo until the cutover (the workspace's updates-redirects.json).
+# Written by tools/onboard-mkdocs/convert-updates.mjs from wso2/docs-updates.
+moves: []

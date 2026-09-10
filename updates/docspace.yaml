@@ -1,0 +1,17 @@
+# Doc space manifest: WSO2 Updates (schemas/docspace.schema.json on the Platform).
+# Written once by tools/onboard-mkdocs/convert-updates.mjs; edit it by hand on docs-v2/main.
+schemaVersion: 1
+slug: updates
+displayName: Updates
+editionNames:
+  selfHosted: Updates {version}
+home: support
+owners:
+  team: updates-docs
+repo: hevayo/docs-updates
+editLinks: true
+issues:
+  repo: wso2/docs-updates
+editions:
+  - id: 2.0.0
+    branch: main
