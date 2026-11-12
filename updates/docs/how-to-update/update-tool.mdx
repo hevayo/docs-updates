@@ -6,6 +6,9 @@ sidebar_position: 1
 slug: "/update-tool"
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## What is the Update Tool?
 
 The Update Tool is a CLI distribution for Linux, MacOS and Windows distributions that streamlines updating WSO2 products. When you run The Update Tool, it will automatically download and install the latest updates for your WSO2 products. It will also take a backup of your current installation before updating it.
@@ -29,17 +32,29 @@ _* Refer to the Note in the [ARM64 (AArch64) systems](#arm64-aarch64-systems) se
 ### Update Commands for OS
 
 ##### AMD64 (x86-64) systems
+<Tabs groupId="tabs">
+<TabItem value="linux" label="Linux">
+
 ```bash
 $ ./wso2update_linux 
 ```
+
+</TabItem>
+<TabItem value="macos" label="MacOS">
 
 ```bash
 $ ./wso2update_darwin
 ```
 
+</TabItem>
+<TabItem value="windows" label="Windows">
+
 ```bash
 $ ./wso2update_windows.exe
 ```
+
+</TabItem>
+</Tabs>
 
 ##### ARM64 (AArch64) systems
 
@@ -47,17 +62,29 @@ $ ./wso2update_windows.exe
 The ARM64 (AArch64) architecture supported Update Tools are only available in **ARM64 compatible products**, which ships with the [Update Tool setup scripts](../get-started/set-up-update-tool.mdx).
 :::
 
+<Tabs groupId="tabs">
+<TabItem value="linux" label="Linux">
+
 ```bash
 $ ./wso2update_linux_arm64 
 ```
+
+</TabItem>
+<TabItem value="macos" label="MacOS">
 
 ```bash
 $ ./wso2update_darwin_arm64
 ```
 
+</TabItem>
+<TabItem value="windows" label="Windows">
+
 ```bash
 $ ./wso2update_windows_arm64.exe
 ```
+
+</TabItem>
+</Tabs>
 
 There are many features of the WSO2 Updates Tool: 
 

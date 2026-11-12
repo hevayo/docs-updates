@@ -5,6 +5,9 @@ type: "reference"
 sidebar_position: 7
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ### Options
 The following options can be used with the Update Tool setup scripts.
 
@@ -20,56 +23,104 @@ The following options can be used with the Update Tool setup scripts.
 
 1. Set up the Update Tool for the current OS and architecture.
 
-    ```bash
-    $ ./update_tool_setup.sh
-    ```
+    <Tabs groupId="tabs">
+    <TabItem value="linux" label="Linux">
 
     ```bash
     $ ./update_tool_setup.sh
     ```
+
+    </TabItem>
+    <TabItem value="macos" label="MacOS">
+
+    ```bash
+    $ ./update_tool_setup.sh
+    ```
+
+    </TabItem>
+    <TabItem value="windows" label="Windows">
 
     ```bash
     $ .\update_tool_setup.ps1
     ```
 
+    </TabItem>
+    </Tabs>
+
 2. Enable verbose mode and set up the Update Tool for all OSs and architectures supported by the product.
 
-    ```bash
-    $ ./update_tool_setup.sh -v -a
-    ```
+    <Tabs groupId="tabs">
+    <TabItem value="linux" label="Linux">
 
     ```bash
     $ ./update_tool_setup.sh -v -a
     ```
+
+    </TabItem>
+    <TabItem value="macos" label="MacOS">
+
+    ```bash
+    $ ./update_tool_setup.sh -v -a
+    ```
+
+    </TabItem>
+    <TabItem value="windows" label="Windows">
 
     ```bash
     $ .\update_tool_setup.ps1 -v -a
     ```
 
+    </TabItem>
+    </Tabs>
+
 3. Remove all instances of Update Tool binaries with user confirmation prompt.
 
-    ```bash
-    $ ./update_tool_setup.sh -c
-    ```
+    <Tabs groupId="tabs">
+    <TabItem value="linux" label="Linux">
 
     ```bash
     $ ./update_tool_setup.sh -c
     ```
+
+    </TabItem>
+    <TabItem value="macos" label="MacOS">
+
+    ```bash
+    $ ./update_tool_setup.sh -c
+    ```
+
+    </TabItem>
+    <TabItem value="windows" label="Windows">
 
     ```bash
     $ .\update_tool_setup.ps1 -c
     ```
 
+    </TabItem>
+    </Tabs>
+
 4. Forcefully remove all instances of Update Tool binaries without user confirmation prompt.
 
-    ```bash
-    $ ./update_tool_setup.sh --force-clean
-    ```
+    <Tabs groupId="tabs">
+    <TabItem value="linux" label="Linux">
 
     ```bash
     $ ./update_tool_setup.sh --force-clean
     ```
+
+    </TabItem>
+    <TabItem value="macos" label="MacOS">
+
+    ```bash
+    $ ./update_tool_setup.sh --force-clean
+    ```
+
+    </TabItem>
+    <TabItem value="windows" label="Windows">
 
     ```bash
     $ .\update_tool_setup.ps1 -ForceClean
     ```
+
+    </TabItem>
+    </Tabs>

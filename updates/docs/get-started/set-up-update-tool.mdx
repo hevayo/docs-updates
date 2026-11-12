@@ -6,6 +6,9 @@ sidebar_position: 3
 slug: "/set-up-update-tool"
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 To use the **WSO2 Update Tool 2.0**, users must first set up the tool in the product pack. The required setup scripts are bundled with the product pack and located in the `<product-home>/bin` directory.
 
 The script will set up the appropriate Update Tool based on the OS and architecture of the system, provided the product supports the detected system configuration.
@@ -27,17 +30,29 @@ Update Tool setup scripts are only included in Arm compatible product packs, as 
 
 ### Setup Commands for OS
 
-```bash
-$ ./update_tool_setup.sh
-```
+<Tabs groupId="tabs">
+<TabItem value="linux" label="Linux">
 
 ```bash
 $ ./update_tool_setup.sh
 ```
+
+</TabItem>
+<TabItem value="macos" label="MacOS">
+
+```bash
+$ ./update_tool_setup.sh
+```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
 
 ```bash
 $ .\update_tool_setup.ps1
 ```
+
+</TabItem>
+</Tabs>
 
 Refer to the [Using the Update Tool](../how-to-update/update-tool.mdx) page for more information on how to use the Update Tool after setting it up.
 
